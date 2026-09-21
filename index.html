@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Citizen Hub | Isheri Olofin LCDA</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f5;
+            color: #17221c;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background:black;
+            color: white;
+            padding: 18px 7%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+        }
+
+        .header p {
+            color: #b8d8c5;
+        }
+
+        /* NAVIGATION */
+        nav {
+            margin-top: 20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            width:100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #7ee2a8;
+        }
+
+        /* HERO */
+        .hero {
+            background: #0b5d38;
+            color: white;
+            text-align: center;
+            padding: 80px 7%;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color:white;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #d9eee1;
+            font-size: 17px;
+        }
+
+        .hero button {
+            margin-top: 25px;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 60px 7%;
+        }
+
+        section h2 {
+            color: #063b25;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* SERVICES */
+        .services {
+            background: white;
+            text-align: center;
+        }
+
+        .service-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        button {
+            background: #087f46;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #064f2d;
+        }
+
+        /* QUICK ACCESS */
+        .quick-access {
+            background: #f4f7f5;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #087f46;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #063b25;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        /* ANNOUNCEMENTS */
+        .announcements {
+            background: #e8f1eb;
+        }
+
+        .announcement {
+            background: white;
+            padding: 22px;
+            margin-bottom: 15px;
+            border-left: 5px solid #087f46;
+            border-radius: 5px;
+        }
+
+        .announcement h3 {
+            color: #063b25;
+            margin-bottom: 5px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 800px;
+            color: #555;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #063b25;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        /* CHATBOX */
+        .chat-section {
+            background: #f4f7f5;
+        }
+
+        .chat-section > p {
+            margin-bottom: 20px;
+        }
+
+        .chatbox {
+            max-width: 650px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-messages {
+            min-height: 150px;
+            padding: 15px;
+            background: #e8f1eb;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #021f13;
+            color: #b8d8c5;
+            padding: 35px 7%;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            nav a {
+                margin-right: 12px;
+                font-size: 13px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .chat-input {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="header">
+
+            <img
+                src="Logo.jpeg"
+                alt="Isheri Olofin LCDA Logo"
+                class="logo"
+            >
+
+            <div>
+                <h1>Citizen Hub</h1>
+                <p>Isheri Olofin LCDA</p>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#announcements">Announcements</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO / HOME -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <h2>Welcome to Citizen Hub</h2>
+
+            <p>
+                Your digital gateway to services, information,
+                payments and community updates from Isheri Olofin LCDA.
+            </p>
+
+            <button>Explore Services</button>
+
+        </section>
+
+
+        <!-- SERVICES -->
+        <section class="services" id="services">
+
+            <h2>Our Services</h2>
+
+            <div class="service-buttons">
+
+                <button>Pay Taxes & Levies</button>
+
+                <button>Report an Issue</button>
+
+                <button>Request a Service</button>
+
+                <button>Contact the LCDA</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACCESS -->
+        <section class="quick-access">
+
+            <h2>Quick Access</h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Payments</h3>
+
+                    <p>
+                        Pay your taxes, levies and other government charges.
+                    </p>
+
+                    <button>Make a Payment</button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Report an Issue</h3>
+
+                    <p>
+                        Report problems or issues within the community.
+                    </p>
+
+                    <button>Report Now</button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Service Requests</h3>
+
+                    <p>
+                        Submit requests for services provided by the LCDA.
+                    </p>
+
+                    <button>Request Service</button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Information</h3>
+
+                    <p>
+                        Access important information and announcements.
+                    </p>
+
+                    <button>Learn More</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANNOUNCEMENTS -->
+        <section class="announcements" id="announcements">
+
+            <h2>Latest Announcements</h2>
+
+            <div class="announcement">
+
+                <h3>Community Updates</h3>
+
+                <p>
+                    Stay informed about important developments,
+                    programmes and activities within the community.
+                </p>
+
+            </div>
+
+
+            <div class="announcement">
+
+                <h3>Public Notice</h3>
+
+                <p>
+                    Important notices from Isheri Olofin LCDA
+                    will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+
+            <h2>About Isheri Olofin LCDA</h2>
+
+            <p>
+                Citizen Hub provides residents with easy access to
+                local government information, services, payments,
+                requests and community updates.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                <strong>Isheri Olofin LCDA</strong>
+            </p>
+
+            <p>
+                For enquiries, service requests and general information,
+                contact the LCDA.
+            </p>
+
+            <button>Contact the LCDA</button>
+
+        </section>
+
+
+        <!-- CHATBOX -->
+        <section class="chat-section">
+
+            <h2>Government Assistant</h2>
+
+            <p>
+                Have a question? Ask our Citizen Hub assistant.
+            </p>
+
+            <div class="chatbox">
+
+                <div class="chat-messages">
+
+                    <p>
+                        <strong>Assistant:</strong>
+                        Hello! How can I help you today?
+                    </p>
+
+                </div>
+
+
+                <div class="chat-input">
+
+                    <input
+                        type="text"
+                        placeholder="Ask a question..."
+                    >
+
+                    <button>Send</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>Citizen Hub</h3>
+
+        <p>Isheri Olofin LCDA</p>
+
+        <p>
+            Local Government Services • Community • Information
+        </p>
+
+        <br>
+
+        <p>
+            &copy; 2026 Isheri Olofin LCDA. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
